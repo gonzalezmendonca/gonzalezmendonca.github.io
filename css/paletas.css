@@ -235,8 +235,8 @@ body {
 
 .switcher {
   position: sticky;
-  top: 0;
-  z-index: 10;
+  top: var(--nav-height, 0px);
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
