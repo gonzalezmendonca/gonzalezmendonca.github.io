@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipografías &amp; UI Kits — González Mendonça</title>
+  <meta name="description" content="Referencia interna de tipografías y paletas de color: cuatro combinaciones de fuentes aplicadas a un mini UI kit, con tres paletas intercambiables." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,500;1,9..144,400;1,9..144,440&family=Work+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/tipografias.css" />
+</head>
+<body data-palette="ivory">
+
+  <a class="skip-link" href="#kits">Ir al contenido</a>
+
+  <header class="topbar">
+    <a class="topbar__mark" href="index.html">GM</a>
+    <a class="topbar__social" href="index.html">Volver al sitio</a>
+  </header>
+
+  <main>
+    <section class="type-intro" id="kits" aria-labelledby="type-title">
+      <p class="type-intro__eyebrow reveal">Referencia interna</p>
+      <h1 class="type-intro__title reveal" id="type-title">Tipografías &amp; UI Kits</h1>
+      <p class="type-intro__text reveal">
+        Cuatro combinaciones de tipografía, cada una armada como un pequeño kit de
+        interfaz — títulos, texto, etiquetas y botones. Elegí una paleta abajo para
+        ver cómo se comporta el color dentro de cada combinación.
+      </p>
+
+      <div class="palette-switch reveal" role="group" aria-label="Elegir paleta de color">
+        <button type="button" class="palette-swatch is-active" data-palette="ivory" aria-pressed="true">
+          <span class="palette-swatch__dots" aria-hidden="true">
+            <i style="background:#faf6ee"></i><i style="background:#b5673f"></i><i style="background:#2a2419"></i>
+          </span>
+          <span class="palette-swatch__label">Marfil &amp; Terracota</span>
+        </button>
+
+        <button type="button" class="palette-swatch" data-palette="sage" aria-pressed="false">
+          <span class="palette-swatch__dots" aria-hidden="true">
+            <i style="background:#f6f3ea"></i><i style="background:#5c7346"></i><i style="background:#2f3a2b"></i>
+          </span>
+          <span class="palette-swatch__label">Salvia &amp; Arena</span>
+        </button>
+
+        <button type="button" class="palette-swatch" data-palette="palo" aria-pressed="false">
+          <span class="palette-swatch__dots" aria-hidden="true">
+            <i style="background:#f8f1ea"></i><i style="background:#b3596a"></i><i style="background:#3d2624"></i>
+          </span>
+          <span class="palette-swatch__label">Crema &amp; Rosa Palo</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="kits-grid" aria-label="Kits de tipografía">
+
+      <!-- ============ KIT 1 — Cálido Editorial ============ -->
+      <article class="kit kit--1 reveal-image">
+        <header class="kit__meta">
+          <span class="kit__index">01</span>
+          <div class="kit__meta-text">
+            <p class="kit__name">Cálido Editorial</p>
+            <p class="kit__spec">Fraunces &middot; Work Sans</p>
+          </div>
+        </header>
+
+        <div class="kit__stage">
+          <p class="kit__eyebrow">Diseño de interiores</p>
+          <h3 class="kit__h1">Tu casa,<br />tu estilo.</h3>
+          <p class="kit__h2">Asesoramiento a tu presupuesto</p>
+          <p class="kit__body">
+            Transformamos espacios cotidianos en lugares con personalidad y
+            calidez, combinando objetos, color y textiles con mucho ojo.
+          </p>
+
+          <div class="kit__tags">
+            <span class="kit__tag">Living</span>
+            <span class="kit__tag">Dormitorio</span>
+            <span class="kit__tag">Cocina</span>
+          </div>
+
+          <div class="kit__actions">
+            <button type="button" class="kit__btn kit__btn--primary">Reservar asesoría</button>
+            <button type="button" class="kit__btn kit__btn--secondary">Ver proyectos</button>
+            <a class="kit__link" href="#">Conocé más →</a>
+          </div>
+
+          <blockquote class="kit__quote">“Mismo espacio, mucho más vos.”</blockquote>
+        </div>
+      </article>
+
+      <!-- ============ KIT 2 — Alto Contraste ============ -->
+      <article class="kit kit--2 reveal-image">
+        <header class="kit__meta">
+          <span class="kit__index">02</span>
+          <div class="kit__meta-text">
+            <p class="kit__name">Alto Contraste</p>
+            <p class="kit__spec">Playfair Display &middot; Karla</p>
+          </div>
+        </header>
+
+        <div class="kit__stage">
+          <p class="kit__eyebrow">Diseño de interiores</p>
+          <h3 class="kit__h1">Espacios con carácter.</h3>
+          <p class="kit__h2">Styling &amp; dirección de arte</p>
+          <p class="kit__body">
+            Transformamos espacios cotidianos en lugares con personalidad y
+            calidez, combinando objetos, color y textiles con mucho ojo.
+          </p>
+
+          <div class="kit__tags">
+            <span class="kit__tag">Living</span>
+            <span class="kit__tag">Dormitorio</span>
+            <span class="kit__tag">Cocina</span>
+          </div>
+
+          <div class="kit__actions">
+            <button type="button" class="kit__btn kit__btn--primary">Reservar asesoría</button>
+            <button type="button" class="kit__btn kit__btn--secondary">Ver proyectos</button>
+            <a class="kit__link" href="#">Conocé más →</a>
+          </div>
+
+          <blockquote class="kit__quote">“Mismo espacio, mucho más vos.”</blockquote>
+        </div>
+      </article>
+
+      <!-- ============ KIT 3 — Clásico Refinado ============ -->
+      <article class="kit kit--3 reveal-image">
+        <header class="kit__meta">
+          <span class="kit__index">03</span>
+          <div class="kit__meta-text">
+            <p class="kit__name">Clásico Refinado</p>
+            <p class="kit__spec">Cormorant Garamond &middot; Montserrat</p>
+          </div>
+        </header>
+
+        <div class="kit__stage">
+          <p class="kit__eyebrow">Diseño de interiores</p>
+          <h3 class="kit__h1">Tu casa, pero<br />mucho más vos.</h3>
+          <p class="kit__h2">Selección de objetos &amp; mobiliario</p>
+          <p class="kit__body">
+            Transformamos espacios cotidianos en lugares con personalidad y
+            calidez, combinando objetos, color y textiles con mucho ojo.
+          </p>
+
+          <div class="kit__tags">
+            <span class="kit__tag">Living</span>
+            <span class="kit__tag">Dormitorio</span>
+            <span class="kit__tag">Cocina</span>
+          </div>
+
+          <div class="kit__actions">
+            <button type="button" class="kit__btn kit__btn--primary">Reservar asesoría</button>
+            <button type="button" class="kit__btn kit__btn--secondary">Ver proyectos</button>
+            <a class="kit__link" href="#">Conocé más →</a>
+          </div>
+
+          <blockquote class="kit__quote">“Mismo espacio, mucho más vos.”</blockquote>
+        </div>
+      </article>
+
+      <!-- ============ KIT 4 — Moderno Cálido ============ -->
+      <article class="kit kit--4 reveal-image">
+        <header class="kit__meta">
+          <span class="kit__index">04</span>
+          <div class="kit__meta-text">
+            <p class="kit__name">Moderno Cálido</p>
+            <p class="kit__spec">DM Serif Display &middot; DM Sans</p>
+          </div>
+        </header>
+
+        <div class="kit__stage">
+          <p class="kit__eyebrow">Diseño de interiores</p>
+          <h3 class="kit__h1">Casas con onda.</h3>
+          <p class="kit__h2">Proyectos a medida de tu presupuesto</p>
+          <p class="kit__body">
+            Transformamos espacios cotidianos en lugares con personalidad y
+            calidez, combinando objetos, color y textiles con mucho ojo.
+          </p>
+
+          <div class="kit__tags">
+            <span class="kit__tag">Living</span>
+            <span class="kit__tag">Dormitorio</span>
+            <span class="kit__tag">Cocina</span>
+          </div>
+
+          <div class="kit__actions">
+            <button type="button" class="kit__btn kit__btn--primary">Reservar asesoría</button>
+            <button type="button" class="kit__btn kit__btn--secondary">Ver proyectos</button>
+            <a class="kit__link" href="#">Conocé más →</a>
+          </div>
+
+          <blockquote class="kit__quote">“Mismo espacio, mucho más vos.”</blockquote>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer__brand">González Mendonça</span>
+    <span class="footer__sub">Página de referencia interna &middot; no se indexa</span>
+    <a class="footer__social" href="index.html">Volver al sitio</a>
+    <span class="footer__copy">&copy; <span id="year"></span> González Mendonça</span>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/tipografias.js"></script>
+</body>
+</html>

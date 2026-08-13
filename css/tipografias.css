@@ -1,0 +1,487 @@
+/* ==========================================================================
+   Tipografías & UI Kits — página de referencia interna
+   ========================================================================== */
+
+/* ---------- Intro ---------- */
+
+.type-intro {
+  padding: clamp(7.5rem, 16vh, 10rem) var(--gutter) clamp(2.5rem, 6vh, 3.5rem);
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.type-intro__eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.type-intro__title {
+  margin: 0.6rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--ink);
+}
+
+.type-intro__text {
+  margin: clamp(1.2rem, 3vw, 1.6rem) auto 0;
+  max-width: 40ch;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* ---------- Selector de paleta ---------- */
+
+.palette-switch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: clamp(2.2rem, 5vw, 2.8rem) auto 0;
+}
+
+.palette-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem 0.55rem 0.6rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.25s ease;
+}
+
+.palette-swatch:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+.palette-swatch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.palette-swatch.is-active {
+  background: var(--ivory);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.palette-swatch__dots {
+  display: inline-flex;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+}
+
+.palette-swatch__dots i {
+  display: block;
+  width: 0.6rem;
+  height: 1.1rem;
+  font-style: normal;
+}
+
+.palette-swatch__label {
+  white-space: nowrap;
+}
+
+/* ---------- Tema de página (afecta a toda la web, no solo los kits) ---------- */
+
+body {
+  transition: background-color 0.6s var(--ease), color 0.6s var(--ease);
+}
+
+body[data-palette="sage"] {
+  --ivory: #f6f3ea;
+  --paper: #ece6d6;
+  --paper-alt: #e2dac4;
+  --line: rgba(48, 58, 43, 0.14);
+  --line-strong: rgba(48, 58, 43, 0.3);
+  --taupe: #74805f;
+  --stone: #47533f;
+  --ink: #2f3a2b;
+  --ink-soft: #47533f;
+  --accent: #5c7346;
+}
+
+body[data-palette="palo"] {
+  --ivory: #f8f1ea;
+  --paper: #f0e2d8;
+  --paper-alt: #e6d0c2;
+  --line: rgba(74, 40, 40, 0.13);
+  --line-strong: rgba(74, 40, 40, 0.26);
+  --taupe: #a9797a;
+  --stone: #6e4a48;
+  --ink: #3d2624;
+  --ink-soft: #5e4341;
+  --accent: #b3596a;
+}
+
+.topbar__mark,
+.footer__brand,
+.footer__sub,
+.footer__copy {
+  transition: color 0.6s var(--ease);
+}
+
+/* ---------- Grilla de kits ---------- */
+
+.kits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: clamp(1.4rem, 3vw, 2rem);
+  padding: 0 var(--gutter) clamp(6rem, 12vh, 8rem);
+  max-width: 82rem;
+  margin: 0 auto;
+}
+
+/* ---------- Kit (recuadro) ---------- */
+
+.kit {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(1.8rem, 3.5vw, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.6rem, 3vw, 2rem);
+  transition: opacity 1.1s var(--ease), transform 1.4s var(--ease),
+    background 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+
+.kit__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding-bottom: clamp(1.2rem, 3vw, 1.6rem);
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.6s var(--ease);
+}
+
+.kit__index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--taupe);
+}
+
+.kit__meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.kit__name {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.kit__spec {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--taupe);
+}
+
+.kit__index,
+.kit__name,
+.kit__spec,
+.kit__eyebrow,
+.kit__h1,
+.kit__h2,
+.kit__body {
+  transition: color 0.6s var(--ease);
+}
+
+.kit__stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.kit__eyebrow {
+  margin: 0;
+  font-family: var(--kit-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.kit__h1 {
+  margin: 0;
+  font-family: var(--kit-display);
+  color: var(--ink);
+}
+
+.kit__h2 {
+  margin: 0;
+  font-family: var(--kit-body);
+  color: var(--ink-soft);
+}
+
+.kit__body {
+  margin: 0.2rem 0 0;
+  max-width: 36ch;
+  font-family: var(--kit-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.kit__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kit__tag {
+  font-family: var(--kit-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.75rem;
+  transition: color 0.6s var(--ease), background-color 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+
+.kit__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.kit__btn {
+  font-family: var(--kit-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  transition: color 0.5s var(--ease), background 0.5s var(--ease), border-color 0.5s var(--ease), transform 0.25s ease;
+}
+
+.kit__btn:hover {
+  transform: translateY(-1px);
+}
+
+.kit__btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ivory);
+}
+
+.kit__btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.kit__btn--secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.kit__link {
+  font-family: var(--kit-body);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+  transition: color 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+
+.kit__link:hover,
+.kit__link:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.kit__quote {
+  margin: 0.2rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--kit-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  transition: color 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+
+/* ---------- Kit 1 · Cálido Editorial ---------- */
+
+.kit--1 {
+  --kit-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --kit-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.kit--1 .kit__h1 {
+  font-weight: 440;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+}
+
+.kit--1 .kit__h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.kit--1 .kit__tag {
+  border-radius: 999px;
+}
+
+.kit--1 .kit__btn {
+  border-radius: 999px;
+}
+
+/* ---------- Kit 2 · Alto Contraste ---------- */
+
+.kit--2 {
+  --kit-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --kit-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+}
+
+.kit--2 .kit__h1 {
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.005em;
+}
+
+.kit--2 .kit__h2 {
+  font-weight: 500;
+  font-size: 1.02rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.kit--2 .kit__eyebrow {
+  font-weight: 600;
+}
+
+.kit--2 .kit__btn {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 500;
+  border-width: 1.5px;
+}
+
+.kit--2 .kit__tag {
+  border-radius: 0;
+}
+
+.kit--2 .kit__quote {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ---------- Kit 3 · Clásico Refinado ---------- */
+
+.kit--3 {
+  --kit-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --kit-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+.kit--3 .kit__h1 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  line-height: 1.08;
+}
+
+.kit--3 .kit__h2 {
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kit--3 .kit__eyebrow {
+  font-weight: 500;
+}
+
+.kit--3 .kit__btn {
+  border-radius: 2px;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+.kit--3 .kit__btn--primary {
+  border-radius: 2px;
+}
+
+.kit--3 .kit__tag {
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* ---------- Kit 4 · Moderno Cálido ---------- */
+
+.kit--4 {
+  --kit-display: "DM Serif Display", "Iowan Old Style", Georgia, serif;
+  --kit-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.kit--4 .kit__h1 {
+  font-weight: 400;
+  font-size: clamp(1.95rem, 3.2vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.kit--4 .kit__h2 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.kit--4 .kit__tag {
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.kit--4 .kit__btn {
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.kit--4 .kit__btn--secondary {
+  border-style: dashed;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .palette-swatch__label {
+    display: none;
+  }
+
+  .palette-swatch {
+    padding: 0.55rem;
+  }
+
+  .kits-grid {
+    grid-template-columns: 1fr;
+  }
+}
