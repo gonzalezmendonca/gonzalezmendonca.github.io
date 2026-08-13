@@ -6,35 +6,60 @@
     if (el) el.textContent = new Date().getFullYear();
   };
 
-  const parallaxGlow = () => {
-    const glowA = document.querySelector(".glow-wrap--a");
-    const glowB = document.querySelector(".glow-wrap--b");
-    if (!glowA || !glowB) return;
+  const playHeroVideo = () => {
+    const video = document.querySelector(".hero__video");
+    if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (window.matchMedia("(hover: none)").matches) return;
+    video.play().catch(() => {});
+  };
 
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
+  const initCompareSliders = () => {
+    document.querySelectorAll("[data-compare]").forEach((el) => {
+      const range = el.querySelector("[data-compare-range]");
+      if (!range) return;
+      const setPos = () => el.style.setProperty("--pos", `${range.value}%`);
+      range.addEventListener("input", setPos);
+      setPos();
+    });
+  };
 
-    window.addEventListener("pointermove", (e) => {
-      targetX = (e.clientX / window.innerWidth - 0.5) * 2;
-      targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+  const revealOnScroll = () => {
+    const targets = document.querySelectorAll(".reveal, .reveal-image");
+    if (!targets.length) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      targets.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const groups = new Map();
+    targets.forEach((el) => {
+      const parent = el.parentElement;
+      if (!groups.has(parent)) groups.set(parent, []);
+      groups.get(parent).push(el);
     });
 
-    const tick = () => {
-      currentX += (targetX - currentX) * 0.04;
-      currentY += (targetY - currentY) * 0.04;
-      glowA.style.transform = `translate(${currentX * 18}px, ${currentY * 18}px)`;
-      glowB.style.transform = `translate(${currentX * -14}px, ${currentY * -14}px)`;
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const siblings = groups.get(entry.target.parentElement) || [entry.target];
+          const index = siblings.indexOf(entry.target);
+          entry.target.style.transitionDelay = `${Math.max(index, 0) * 0.08}s`;
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    targets.forEach((el) => observer.observe(el));
   };
 
   document.addEventListener("DOMContentLoaded", () => {
     setYear();
-    parallaxGlow();
+    revealOnScroll();
+    playHeroVideo();
+    initCompareSliders();
   });
 })();

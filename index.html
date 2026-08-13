@@ -3,62 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>González Mendonça &amp; Asociados — Estudio Jurídico</title>
-  <meta name="description" content="González Mendonça & Asociados, estudio jurídico boutique. Sitio en construcción — próximamente." />
+  <title>González Mendonça — Interiorismo &amp; Decoración</title>
+  <meta name="description" content="González Mendonça es el proyecto de interiorismo y decoración de Candela González Mendonça: espacios con personalidad, calidez y estilo, sin necesidad de grandes presupuestos." />
+
+  <meta property="og:title" content="González Mendonça — Interiorismo & Decoración" />
+  <meta property="og:description" content="Candela González Mendonça transforma casas en espacios con personalidad. Asesoramiento de decoración, styling y diseño de interiores." />
+  <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,500;1,9..144,400;1,9..144,440&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <div class="grain"></div>
+  <a class="skip-link" href="#proyecto">Ir al contenido</a>
 
-  <div class="glow-wrap glow-wrap--a" aria-hidden="true"><div class="glow glow--a"></div></div>
-  <div class="glow-wrap glow-wrap--b" aria-hidden="true"><div class="glow glow--b"></div></div>
+  <header class="topbar">
+    <span class="topbar__mark">GM</span>
+    <a class="topbar__social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+  </header>
 
-  <main class="stage">
+  <main>
 
-    <header class="crest" data-reveal>
-      <svg class="crest__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <circle cx="32" cy="32" r="31" fill="none" stroke="currentColor" stroke-width="1" />
-        <line x1="32" y1="10" x2="32" y2="20" stroke="currentColor" stroke-width="1" />
-        <line x1="14" y1="24" x2="50" y2="24" stroke="currentColor" stroke-width="1" />
-        <line x1="14" y1="24" x2="14" y2="30" stroke="currentColor" stroke-width="1" />
-        <line x1="50" y1="24" x2="50" y2="30" stroke="currentColor" stroke-width="1" />
-        <path d="M8 30 L14 30 L20 30 L14 42 Z" fill="none" stroke="currentColor" stroke-width="1" />
-        <path d="M44 30 L50 30 L56 30 L50 42 Z" fill="none" stroke="currentColor" stroke-width="1" />
-        <line x1="32" y1="24" x2="32" y2="48" stroke="currentColor" stroke-width="1" />
-        <line x1="22" y1="48" x2="42" y2="48" stroke="currentColor" stroke-width="1" />
-      </svg>
-    </header>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow reveal">Interiorismo &amp; Decoración</p>
 
-    <p class="eyebrow" data-reveal>Estudio Jurídico Boutique</p>
+        <h1 class="hero__brand reveal">González<br />Mendonça</h1>
 
-    <h1 class="firm" data-reveal>
-      <span class="firm__line">González Mendonça</span>
-      <span class="firm__amp">&amp;</span>
-      <span class="firm__line">Asociados</span>
-    </h1>
+        <p class="hero__tagline reveal">Casas con personalidad,<br />sin gastar de más.</p>
 
-    <div class="rule" data-reveal aria-hidden="true"><span></span></div>
+        <p class="hero__byline reveal">
+          Un proyecto de <span class="nowrap">Candela González Mendonça</span>
+        </p>
 
-    <h2 class="coming" data-reveal>Próximamente</h2>
+        <a class="hero__cta reveal" href="#proyecto">
+          <span>Conocé el proyecto</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
 
-    <p class="tagline" data-reveal>
-      Estamos preparando un nuevo espacio digital a la altura de nuestro compromiso con cada cliente.
-    </p>
+      <figure class="hero__image reveal-image">
+        <!-- Video real de un proyecto de Candela (recorrido completo, sin editar) -->
+        <video
+          class="hero__video"
+          poster="img/hero-poster.jpg"
+          muted
+          loop
+          playsinline
+          preload="auto"
+          width="576"
+          height="1024"
+          aria-label="Rincón con cómoda antigua, espejo ovalado y flores — proyecto de Candela"
+        >
+          <source src="video/hero-video.mp4" type="video/mp4" />
+        </video>
+      </figure>
+    </section>
 
-    <a class="contact" data-reveal href="mailto:contacto@gonzalezmendonca.com.ar">
-      contacto@gonzalezmendonca.com
-    </a>
+    <!-- ============ INTRO / CONCEPTO ============ -->
+    <section class="intro" id="proyecto">
+      <p class="intro__text reveal">
+        Candela transforma espacios cotidianos en casas con
+        <em>personalidad, estilo y carácter</em> — combinando objetos,
+        color y textiles con mucho ojo y sin necesidad de grandes inversiones.
+      </p>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="servicios" aria-labelledby="servicios-title">
+      <h2 class="servicios__title reveal" id="servicios-title">Qué hacemos</h2>
+
+      <ol class="servicios__list">
+        <li class="servicios__item reveal">
+          <span class="servicios__num">01</span>
+          <span class="servicios__name">Asesoramiento de decoración</span>
+        </li>
+        <li class="servicios__item reveal">
+          <span class="servicios__num">02</span>
+          <span class="servicios__name">Diseño de espacios</span>
+        </li>
+        <li class="servicios__item reveal">
+          <span class="servicios__num">03</span>
+          <span class="servicios__name">Selección de objetos y mobiliario</span>
+        </li>
+        <li class="servicios__item reveal">
+          <span class="servicios__num">04</span>
+          <span class="servicios__name">Styling</span>
+        </li>
+        <li class="servicios__item reveal">
+          <span class="servicios__num">05</span>
+          <span class="servicios__name">Transformación de espacios</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ ANTES Y DESPUÉS ============ -->
+    <section class="transform" aria-labelledby="transform-title">
+      <p class="transform__eyebrow reveal">Un proyecto real</p>
+      <h2 class="transform__title reveal" id="transform-title">El antes y el después</h2>
+
+      <div class="compare reveal-image" data-compare>
+        <img class="compare__img" src="img/proyectos/proyecto-1/antes.jpg" alt="Living vacío, con piso de cemento sin terminar, antes de la intervención de Candela" />
+
+        <div class="compare__reveal" data-compare-reveal>
+          <img class="compare__img" src="img/proyectos/proyecto-1/despues.jpg" alt="El mismo living ya decorado: sofá, alfombras, consola vintage y mobiliario cálido" />
+        </div>
+
+        <span class="compare__tag compare__tag--before">Antes</span>
+        <span class="compare__tag compare__tag--after">Después</span>
+
+        <div class="compare__handle" data-compare-handle aria-hidden="true">
+          <span class="compare__grip">
+            <svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M10 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+
+        <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" data-compare-range aria-label="Deslizar para comparar el antes y el después" />
+      </div>
+
+      <p class="transform__caption reveal">Mismo espacio, mismos metros — resuelto con objetos, color y un poco de cariño.</p>
+    </section>
+
+    <!-- ============ SOBRE CANDELA ============ -->
+    <section class="about">
+      <figure class="about__image reveal-image">
+        <!-- Placeholder — reemplazar por foto de Candela -->
+        <svg class="about__placeholder" viewBox="0 0 700 860" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retrato de Candela González Mendonça — fotografía próximamente">
+          <rect width="700" height="860" fill="#e4d6c0" />
+          <circle cx="350" cy="330" r="120" fill="none" stroke="#8a7c68" stroke-width="1.6" opacity="0.75" />
+          <path d="M190 700 q160 -140 320 0" fill="none" stroke="#8a7c68" stroke-width="1.6" opacity="0.75" />
+          <text x="50%" y="93%" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="14" letter-spacing="2" fill="#8a7c68">FOTOGRAFÍA PRÓXIMAMENTE</text>
+        </svg>
+      </figure>
+
+      <div class="about__text">
+        <p class="about__eyebrow reveal">Detrás de la marca</p>
+        <h2 class="about__title reveal">Candela<br />González Mendonça</h2>
+        <p class="about__body reveal">
+          Apasionada por transformar casas en espacios que reflejan a
+          quienes las habitan. Su ojo para combinar objetos, colores y
+          texturas convierte ambientes cotidianos en lugares con
+          mucha onda — sin fórmulas rígidas ni gastos innecesarios.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="closing">
+      <p class="closing__eyebrow reveal">Próximamente</p>
+      <h2 class="closing__title reveal">Tu casa, pero mucho más vos.</h2>
+      <a class="closing__cta reveal" href="mailto:hola@gonzalezmendonca.com">Trabajemos juntas</a>
+    </section>
 
   </main>
 
-  <footer class="footer" data-reveal>
-    <span>&copy; <span id="year"></span> González Mendonça &amp; Asociados</span>
+  <footer class="footer">
+    <span class="footer__brand">González Mendonça</span>
+    <span class="footer__sub">Candela González Mendonça · Interiorismo &amp; Decoración</span>
+    <a class="footer__social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <span class="footer__copy">&copy; <span id="year"></span> González Mendonça</span>
   </footer>
 
   <script src="js/script.js"></script>
