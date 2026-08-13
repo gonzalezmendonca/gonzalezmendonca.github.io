@@ -20,9 +20,75 @@
 
   <a class="skip-link" href="#proyecto">Ir al contenido</a>
 
-  <header class="topbar">
-    <span class="topbar__mark">GM</span>
-    <a class="topbar__social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+  <header class="nav" data-nav>
+    <div class="nav__bar">
+      <a class="nav__mark" href="#" aria-label="González Mendonça — inicio">GM</a>
+
+      <button type="button" class="nav__toggle" data-nav-toggle aria-haspopup="true" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+        <svg class="nav__toggle-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <path id="nav-ring-path" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
+          </defs>
+          <text class="nav__toggle-ring-text">
+            <textPath href="#nav-ring-path" startOffset="0%">GONZÁLEZ MENDONÇA · DECORACIÓN · GONZÁLEZ MENDONÇA · DECORACIÓN · </textPath>
+          </text>
+        </svg>
+        <span class="nav__toggle-burger" aria-hidden="true">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="nav__menu" data-nav-menu id="nav-menu" aria-hidden="true">
+      <div class="nav__menu-inner">
+        <nav aria-label="Navegación principal">
+          <ol class="nav__menu-list">
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#"><span class="nav__menu-num">01</span><span class="nav__menu-label">Inicio</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#proyecto"><span class="nav__menu-num">02</span><span class="nav__menu-label">El proyecto</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#servicios"><span class="nav__menu-num">03</span><span class="nav__menu-label">Qué hacemos</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#transform"><span class="nav__menu-num">04</span><span class="nav__menu-label">Antes y después</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#sobre"><span class="nav__menu-num">05</span><span class="nav__menu-label">Sobre Candela</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="#contacto"><span class="nav__menu-num">06</span><span class="nav__menu-label">Trabajemos juntas</span></a>
+            </li>
+            <li class="nav__menu-item">
+              <a class="nav__menu-link" data-nav-link href="logos.html"><span class="nav__menu-num">07</span><span class="nav__menu-label">Marcas &amp; aliados</span></a>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="nav__menu-foot">
+          <div class="nav__menu-contact">
+            <a class="nav__menu-mail" href="mailto:hola@gonzalezmendonca.com">hola@gonzalezmendonca.com</a>
+            <a class="nav__menu-social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          </div>
+          <p class="nav__menu-tag">A tu estilo y tu presupuesto</p>
+        </div>
+      </div>
+
+      <div class="nav__menu-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <path id="nav-badge-path" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
+          </defs>
+          <text class="nav__menu-badge-text">
+            <textPath href="#nav-badge-path" startOffset="0%">INTERIORISMO · STYLING · DECORACIÓN · A TU ESTILO Y TU PRESUPUESTO · </textPath>
+          </text>
+        </svg>
+        <span class="nav__menu-badge-center">GM</span>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -74,7 +140,7 @@
     </section>
 
     <!-- ============ SERVICIOS ============ -->
-    <section class="servicios" aria-labelledby="servicios-title">
+    <section class="servicios" id="servicios" aria-labelledby="servicios-title">
       <h2 class="servicios__title reveal" id="servicios-title">Qué hacemos</h2>
 
       <ol class="servicios__list">
@@ -106,7 +172,7 @@
     </section>
 
     <!-- ============ ANTES Y DESPUÉS ============ -->
-    <section class="transform" aria-labelledby="transform-title">
+    <section class="transform" id="transform" aria-labelledby="transform-title">
       <p class="transform__eyebrow reveal">Un proyecto real</p>
       <h2 class="transform__title reveal" id="transform-title">El antes y el después</h2>
 
@@ -133,7 +199,7 @@
     </section>
 
     <!-- ============ SOBRE CANDELA ============ -->
-    <section class="about">
+    <section class="about" id="sobre">
       <figure class="about__image reveal-image">
         <!-- Placeholder — reemplazar por foto de Candela -->
         <svg class="about__placeholder" viewBox="0 0 700 860" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retrato de Candela González Mendonça — fotografía próximamente">
@@ -157,7 +223,7 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="closing">
+    <section class="closing" id="contacto">
       <p class="closing__eyebrow reveal">A tu estilo y tu presupuesto</p>
       <h2 class="closing__title reveal">Tu casa, pero mucho más vos.</h2>
       <a class="closing__cta reveal" href="mailto:hola@gonzalezmendonca.com">Trabajemos juntas</a>
@@ -172,6 +238,8 @@
     <span class="footer__copy">&copy; <span id="year"></span> González Mendonça</span>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
