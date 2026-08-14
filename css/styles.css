@@ -831,6 +831,80 @@ html::-webkit-scrollbar {
   color: var(--taupe);
 }
 
+/* ---------- Showcase (scroll horizontal fijo tipo Locomotive) ---------- */
+
+.showcase {
+  padding: clamp(3rem, 8vh, 5rem) 0 clamp(5.5rem, 12vh, 7.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.showcase__head {
+  padding: 0 var(--gutter);
+  max-width: 46rem;
+  margin: 0 auto clamp(2.2rem, 5.5vw, 3.2rem);
+  text-align: center;
+}
+
+.showcase__eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+/* Estado por defecto: scroll horizontal nativo (mobile / sin JS) */
+.showcase__pin {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 var(--gutter);
+}
+
+.showcase__pin::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase__track {
+  margin: 0;
+  padding: 0 0 0.2rem;
+  width: max-content;
+}
+
+.showcase__giant {
+  font-family: var(--serif);
+  font-weight: 440;
+  font-size: clamp(3rem, 11vw, 8.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.showcase__giant em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Cuando GSAP pinea la sección (desktop/tablet grande), el scroll lateral
+   queda a cargo del track vía transform, así que se apaga el scroll nativo. */
+.showcase.is-pinned .showcase__pin {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.showcase.is-pinned .showcase__giant {
+  font-size: clamp(8rem, 78vh, 26rem);
+  line-height: 0.92;
+}
+
+.showcase.is-pinned .showcase__track {
+  will-change: transform;
+}
+
 /* ---------- Sobre Candela ---------- */
 
 .about {
