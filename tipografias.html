@@ -16,6 +16,10 @@
 </head>
 <body data-palette="ivory">
 
+  <div class="scrollbar-top" data-scrollbar-top aria-hidden="true">
+    <div class="scrollbar-top__fill" data-scrollbar-top-fill></div>
+  </div>
+
   <a class="skip-link" href="#kits">Ir al contenido</a>
 
   <header class="nav" data-nav>
@@ -90,6 +94,13 @@
       </div>
     </div>
   </header>
+
+  <div class="scrollbar" data-scrollbar aria-hidden="true">
+    <div class="scrollbar__track" data-scrollbar-track>
+      <div class="scrollbar__fill" data-scrollbar-fill></div>
+    </div>
+    <span class="scrollbar__pct" data-scrollbar-pct>00</span>
+  </div>
 
   <main>
     <section class="type-intro" id="kits" aria-labelledby="type-title">
@@ -279,6 +290,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/scrollbar.js"></script>
   <script src="js/script.js"></script>
   <script src="js/tipografias.js"></script>
 </body>
