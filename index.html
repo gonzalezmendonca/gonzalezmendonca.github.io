@@ -40,6 +40,8 @@
       </button>
     </div>
 
+    <div class="nav__scrim" data-nav-scrim aria-hidden="true"></div>
+
     <div class="nav__menu" data-nav-menu id="nav-menu" aria-hidden="true">
       <div class="nav__menu-inner">
         <nav aria-label="Navegación principal">
@@ -131,12 +133,14 @@
     </section>
 
     <!-- ============ INTRO / CONCEPTO ============ -->
-    <section class="intro" id="proyecto">
-      <p class="intro__text reveal">
-        Candela transforma espacios cotidianos en casas con
-        <em>personalidad, estilo y carácter</em> — combinando objetos,
-        color y textiles con mucho ojo y sin necesidad de grandes inversiones.
-      </p>
+    <section class="intro hscroll" id="proyecto">
+      <div class="hscroll__track">
+        <p class="intro__text reveal">
+          Candela transforma espacios cotidianos en casas con
+          <em>personalidad, estilo y carácter</em> — combinando objetos,
+          color y textiles con mucho ojo y sin necesidad de grandes inversiones.
+        </p>
+      </div>
     </section>
 
     <!-- ============ SERVICIOS ============ -->
@@ -172,30 +176,32 @@
     </section>
 
     <!-- ============ ANTES Y DESPUÉS ============ -->
-    <section class="transform" id="transform" aria-labelledby="transform-title">
-      <p class="transform__eyebrow reveal">Un proyecto real</p>
-      <h2 class="transform__title reveal" id="transform-title">El antes y el después</h2>
+    <section class="transform hscroll" id="transform" aria-labelledby="transform-title">
+      <div class="hscroll__track">
+        <p class="transform__eyebrow reveal">Un proyecto real</p>
+        <h2 class="transform__title reveal" id="transform-title">El antes y el después</h2>
 
-      <div class="compare reveal-image" data-compare>
-        <img class="compare__img" src="img/proyectos/proyecto-1/despues.jpg" alt="El mismo living ya decorado: sofá, alfombras, consola vintage y mobiliario cálido" />
+        <div class="compare reveal-image" data-compare>
+          <img class="compare__img" src="img/proyectos/proyecto-1/despues.jpg" alt="El mismo living ya decorado: sofá, alfombras, consola vintage y mobiliario cálido" />
 
-        <div class="compare__reveal" data-compare-reveal>
-          <img class="compare__img" src="img/proyectos/proyecto-1/antes.jpg" alt="Living vacío, con piso de cemento sin terminar, antes de la intervención de Candela" />
+          <div class="compare__reveal" data-compare-reveal>
+            <img class="compare__img" src="img/proyectos/proyecto-1/antes.jpg" alt="Living vacío, con piso de cemento sin terminar, antes de la intervención de Candela" />
+          </div>
+
+          <span class="compare__tag compare__tag--before">Antes</span>
+          <span class="compare__tag compare__tag--after">Después</span>
+
+          <div class="compare__handle" data-compare-handle aria-hidden="true">
+            <span class="compare__grip">
+              <svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M10 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+
+          <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" data-compare-range aria-label="Deslizar para comparar el antes y el después" />
         </div>
 
-        <span class="compare__tag compare__tag--before">Antes</span>
-        <span class="compare__tag compare__tag--after">Después</span>
-
-        <div class="compare__handle" data-compare-handle aria-hidden="true">
-          <span class="compare__grip">
-            <svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M10 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-
-        <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" data-compare-range aria-label="Deslizar para comparar el antes y el después" />
+        <p class="transform__caption reveal">Mismo espacio, mismos metros — resuelto a tu estilo y tu presupuesto, con objetos, color y un poco de cariño.</p>
       </div>
-
-      <p class="transform__caption reveal">Mismo espacio, mismos metros — resuelto a tu estilo y tu presupuesto, con objetos, color y un poco de cariño.</p>
     </section>
 
     <!-- ============ SOBRE CANDELA ============ -->
@@ -223,10 +229,12 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="closing" id="contacto">
-      <p class="closing__eyebrow reveal">A tu estilo y tu presupuesto</p>
-      <h2 class="closing__title reveal">Tu casa, pero mucho más vos.</h2>
-      <a class="closing__cta reveal" href="mailto:hola@gonzalezmendonca.com">Trabajemos juntas</a>
+    <section class="closing hscroll" id="contacto">
+      <div class="hscroll__track">
+        <p class="closing__eyebrow reveal">A tu estilo y tu presupuesto</p>
+        <h2 class="closing__title reveal">Tu casa, pero mucho más vos.</h2>
+        <a class="closing__cta reveal" href="mailto:hola@gonzalezmendonca.com">Trabajemos juntas</a>
+      </div>
     </section>
 
   </main>
@@ -239,7 +247,9 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/hscroll.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

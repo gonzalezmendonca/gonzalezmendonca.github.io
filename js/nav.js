@@ -4,11 +4,11 @@
   document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector("[data-nav-toggle]");
     const menu = document.querySelector("[data-nav-menu]");
+    const scrim = document.querySelector("[data-nav-scrim]");
     if (!toggle || !menu) return;
 
     const lines = toggle.querySelectorAll(".nav__toggle-line");
     const ring = toggle.querySelector(".nav__toggle-ring");
-    const badge = menu.querySelector(".nav__menu-badge svg");
     const items = menu.querySelectorAll(".nav__menu-item");
     const links = menu.querySelectorAll("[data-nav-link]");
 
@@ -23,7 +23,7 @@
     // ---- Idle rotation on the ring text (GSAP-driven) ----
     if (hasGsap && !reduceMotion) {
       if (ring) gsap.to(ring, { rotation: 360, duration: 26, ease: "none", repeat: -1, transformOrigin: "50% 50%" });
-      if (badge) gsap.to(badge, { rotation: 360, duration: 32, ease: "none", repeat: -1, transformOrigin: "50% 50%" });
+      gsap.set(menu, { x: 0, xPercent: 100 });
     }
 
     // ---- Magnetic hover on the toggle circle ----
@@ -54,32 +54,20 @@
       isAnimating = true;
       isOpen = true;
 
-      const rect = toggle.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const maxR = Math.hypot(
-        Math.max(cx, window.innerWidth - cx),
-        Math.max(cy, window.innerHeight - cy)
-      ) * 1.05;
-
       document.documentElement.classList.add("nav-open");
       toggle.classList.add("is-active");
       toggle.setAttribute("aria-expanded", "true");
       toggle.setAttribute("aria-label", "Cerrar menú");
       menu.setAttribute("aria-hidden", "false");
       menu.classList.add("is-visible");
+      if (scrim) scrim.classList.add("is-visible");
       setLinksTabbable(true);
 
       if (!hasGsap || reduceMotion) {
-        menu.style.clipPath = "circle(150% at 100% 0%)";
         menu.classList.add("is-open");
-        if (hasGsap) gsap.set(items, { opacity: 1, yPercent: 0, rotate: 0 });
         isAnimating = false;
         return;
       }
-
-      menu.style.clipPath = `circle(0px at ${cx}px ${cy}px)`;
-      const state = { r: 0 };
 
       gsap.timeline({
         onComplete: () => {
@@ -87,20 +75,13 @@
           menu.classList.add("is-open");
         }
       })
-        .to(state, {
-          r: maxR,
-          duration: 1.05,
-          ease: "power4.inOut",
-          onUpdate: () => {
-            menu.style.clipPath = `circle(${state.r}px at ${cx}px ${cy}px)`;
-          }
-        }, 0)
+        .to(menu, { xPercent: 0, duration: 0.85, ease: "power4.inOut" }, 0)
         .to(lines[0], { rotate: 45, y: 3.4, duration: 0.4, ease: "power2.inOut" }, 0)
         .to(lines[1], { rotate: -45, y: -3.4, duration: 0.4, ease: "power2.inOut" }, 0)
         .fromTo(items,
-          { yPercent: 120, rotate: 5, opacity: 0 },
-          { yPercent: 0, rotate: 0, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.055 },
-          0.35
+          { yPercent: 40, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.05 },
+          0.25
         );
     };
 
@@ -114,6 +95,7 @@
       toggle.setAttribute("aria-label", "Abrir menú");
       menu.setAttribute("aria-hidden", "true");
       menu.classList.remove("is-open");
+      if (scrim) scrim.classList.remove("is-visible");
       setLinksTabbable(false);
 
       const finish = () => {
@@ -123,28 +105,15 @@
       };
 
       if (!hasGsap || reduceMotion) {
-        menu.style.clipPath = "circle(0px at 100% 0%)";
         finish();
         return;
       }
 
-      const rect = toggle.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const state = { r: Math.hypot(window.innerWidth, window.innerHeight) };
-
       gsap.timeline({ onComplete: finish })
         .to(lines[0], { rotate: 0, y: 0, duration: 0.35, ease: "power2.inOut" }, 0)
         .to(lines[1], { rotate: 0, y: 0, duration: 0.35, ease: "power2.inOut" }, 0)
-        .to(items, { yPercent: -30, opacity: 0, duration: 0.3, ease: "power2.in", stagger: 0.02 }, 0)
-        .to(state, {
-          r: 0,
-          duration: 0.75,
-          ease: "power3.inOut",
-          onUpdate: () => {
-            menu.style.clipPath = `circle(${state.r}px at ${cx}px ${cy}px)`;
-          }
-        }, 0.08);
+        .to(items, { yPercent: -20, opacity: 0, duration: 0.25, ease: "power2.in", stagger: 0.02 }, 0)
+        .to(menu, { xPercent: 100, duration: 0.6, ease: "power3.inOut" }, 0.05);
     };
 
     toggle.addEventListener("click", () => {
@@ -155,18 +124,12 @@
       link.addEventListener("click", () => closeMenu());
     });
 
+    if (scrim) {
+      scrim.addEventListener("click", () => closeMenu());
+    }
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isOpen) closeMenu();
-    });
-
-    window.addEventListener("resize", () => {
-      if (isOpen && (!hasGsap || reduceMotion)) return;
-      if (isOpen) {
-        const rect = toggle.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        menu.style.clipPath = `circle(150% at ${cx}px ${cy}px)`;
-      }
     });
   });
 })();
