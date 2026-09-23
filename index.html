@@ -3,282 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>González Mendonça — A tu estilo y tu presupuesto</title>
-  <meta name="description" content="González Mendonça es el proyecto de Candela González Mendonça: decoramos tu casa a tu estilo y tu presupuesto, con personalidad y calidez, sin necesidad de grandes inversiones." />
-
-  <meta property="og:title" content="González Mendonça — A tu estilo y tu presupuesto" />
-  <meta property="og:description" content="Candela González Mendonça transforma casas en espacios con personalidad, siempre a tu estilo y tu presupuesto. Asesoramiento de decoración, styling y diseño de interiores." />
-  <meta property="og:type" content="website" />
+  <title>González Mendonça — Próximamente</title>
+  <meta name="description" content="González Mendonça — decoración a tu estilo y tu presupuesto. Nuestro sitio está en camino." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,500;1,9..144,400;1,9..144,440&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;1,9..144,400&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root {
+      --ivory: #faf6ee;
+      --line-strong: rgba(42, 36, 27, 0.28);
+      --taupe: #8a7c68;
+      --ink: #2a2419;
+      --accent: #b5673f;
+      --serif: "Fraunces", "Iowan Old Style", "Georgia", serif;
+      --sans: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .soon {
+      display: grid;
+      justify-items: center;
+      gap: 1.25rem;
+      animation: rise 1.2s var(--ease) both;
+    }
+
+    .soon__mark {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .soon__title {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 340;
+      font-style: italic;
+      font-size: clamp(3rem, 12vw, 7.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .soon__rule {
+      width: 3rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .soon__text {
+      margin: 0;
+      max-width: 28rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--taupe);
+    }
+
+    .preview-link {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      text-decoration: none;
+      transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+
+    .preview-link:hover,
+    .preview-link:focus-visible {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .soon { animation: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="scrollbar-top" data-scrollbar-top aria-hidden="true">
-    <div class="scrollbar-top__fill" data-scrollbar-top-fill></div>
-  </div>
-
-  <a class="skip-link" href="#proyecto">Ir al contenido</a>
-
-  <header class="nav" data-nav>
-    <div class="nav__bar">
-      <a class="nav__mark" href="#" aria-label="González Mendonça — inicio">GM</a>
-
-      <button type="button" class="nav__toggle" data-nav-toggle aria-haspopup="true" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
-        <svg class="nav__toggle-ring" viewBox="0 0 120 120" aria-hidden="true">
-          <defs>
-            <path id="nav-ring-path" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
-          </defs>
-          <text class="nav__toggle-ring-text">
-            <textPath href="#nav-ring-path" startOffset="0%">GONZÁLEZ MENDONÇA · DECORACIÓN · GONZÁLEZ MENDONÇA · DECORACIÓN · </textPath>
-          </text>
-        </svg>
-        <span class="nav__toggle-burger" aria-hidden="true">
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
-        </span>
-      </button>
-    </div>
-
-    <div class="nav__scrim" data-nav-scrim aria-hidden="true"></div>
-
-    <div class="nav__menu" data-nav-menu id="nav-menu" aria-hidden="true">
-      <div class="nav__menu-inner">
-        <nav aria-label="Navegación principal">
-          <ol class="nav__menu-list">
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#"><span class="nav__menu-num">01</span><span class="nav__menu-label">Inicio</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#proyecto"><span class="nav__menu-num">02</span><span class="nav__menu-label">El proyecto</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#servicios"><span class="nav__menu-num">03</span><span class="nav__menu-label">Qué hacemos</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#transform"><span class="nav__menu-num">04</span><span class="nav__menu-label">Antes y después</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#showcase"><span class="nav__menu-num">05</span><span class="nav__menu-label">Nuestra mirada</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#sobre"><span class="nav__menu-num">06</span><span class="nav__menu-label">Sobre Candela</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="#contacto"><span class="nav__menu-num">07</span><span class="nav__menu-label">Trabajemos juntas</span></a>
-            </li>
-            <li class="nav__menu-item">
-              <a class="nav__menu-link" data-nav-link href="logos.html"><span class="nav__menu-num">08</span><span class="nav__menu-label">Marcas &amp; aliados</span></a>
-            </li>
-          </ol>
-        </nav>
-
-        <div class="nav__menu-foot">
-          <div class="nav__menu-contact">
-            <a class="nav__menu-mail" href="mailto:hola@gonzalezmendonca.com">hola@gonzalezmendonca.com</a>
-            <a class="nav__menu-social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-          </div>
-          <p class="nav__menu-tag">A tu estilo y tu presupuesto</p>
-        </div>
-      </div>
-
-      <div class="nav__menu-badge" aria-hidden="true">
-        <svg viewBox="0 0 200 200">
-          <defs>
-            <path id="nav-badge-path" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
-          </defs>
-          <text class="nav__menu-badge-text">
-            <textPath href="#nav-badge-path" startOffset="0%">INTERIORISMO · STYLING · DECORACIÓN · A TU ESTILO Y TU PRESUPUESTO · </textPath>
-          </text>
-        </svg>
-        <span class="nav__menu-badge-center">GM</span>
-      </div>
-    </div>
-  </header>
-
-  <div class="scrollbar" data-scrollbar aria-hidden="true">
-    <div class="scrollbar__track" data-scrollbar-track>
-      <div class="scrollbar__fill" data-scrollbar-fill></div>
-    </div>
-    <span class="scrollbar__pct" data-scrollbar-pct>00</span>
-  </div>
-
-  <main>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero__text">
-        <p class="hero__eyebrow reveal">Diseño y decoración para tu hogar</p>
-
-        <h1 class="hero__brand reveal">González<br />Mendonça</h1>
-
-        <p class="hero__tagline reveal">Tu casa, tu estilo,<br />tu presupuesto.</p>
-
-        <p class="hero__byline reveal">
-          Un proyecto de <span class="nowrap">Candela González Mendonça</span>
-        </p>
-
-        <a class="hero__cta reveal" href="#proyecto">
-          <span>Conocé el proyecto</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
-      <figure class="hero__image reveal-image">
-        <!-- Video real de un proyecto de Candela (recorrido completo, sin editar) -->
-        <video
-          class="hero__video"
-          poster="img/hero-poster.jpg"
-          muted
-          loop
-          playsinline
-          preload="auto"
-          width="576"
-          height="1024"
-          aria-label="Rincón con cómoda antigua, espejo ovalado y flores — proyecto de Candela"
-        >
-          <source src="video/hero-video.mp4" type="video/mp4" />
-        </video>
-      </figure>
-    </section>
-
-    <!-- ============ INTRO / CONCEPTO ============ -->
-    <section class="intro hscroll" id="proyecto">
-      <div class="hscroll__track">
-        <p class="intro__text reveal">
-          Candela transforma espacios cotidianos en casas con
-          <em>personalidad, estilo y carácter</em> — combinando objetos,
-          color y textiles con mucho ojo y sin necesidad de grandes inversiones.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============ SERVICIOS ============ -->
-    <section class="servicios" id="servicios" aria-labelledby="servicios-title">
-      <h2 class="servicios__title reveal" id="servicios-title">Qué hacemos</h2>
-
-      <ol class="servicios__list">
-        <li class="servicios__item reveal">
-          <span class="servicios__num">01</span>
-          <span class="servicios__name">Asesoramiento de decoración</span>
-        </li>
-        <li class="servicios__item reveal">
-          <span class="servicios__num">02</span>
-          <span class="servicios__name">Diseño de espacios</span>
-        </li>
-        <li class="servicios__item reveal">
-          <span class="servicios__num">03</span>
-          <span class="servicios__name">Selección de objetos y mobiliario</span>
-        </li>
-        <li class="servicios__item reveal">
-          <span class="servicios__num">04</span>
-          <span class="servicios__name">Styling</span>
-        </li>
-        <li class="servicios__item reveal">
-          <span class="servicios__num">05</span>
-          <span class="servicios__name">Transformación de espacios</span>
-        </li>
-        <li class="servicios__item reveal">
-          <span class="servicios__num">06</span>
-          <span class="servicios__name">Proyectos a medida de tu presupuesto</span>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ============ ANTES Y DESPUÉS ============ -->
-    <section class="transform hscroll" id="transform" aria-labelledby="transform-title">
-      <div class="hscroll__track">
-        <p class="transform__eyebrow reveal">Un proyecto real</p>
-        <h2 class="transform__title reveal" id="transform-title">El antes y el después</h2>
-
-        <div class="compare reveal-image" data-compare>
-          <img class="compare__img" src="img/proyectos/proyecto-1/despues.jpg" alt="El mismo living ya decorado: sofá, alfombras, consola vintage y mobiliario cálido" />
-
-          <div class="compare__reveal" data-compare-reveal>
-            <img class="compare__img" src="img/proyectos/proyecto-1/antes.jpg" alt="Living vacío, con piso de cemento sin terminar, antes de la intervención de Candela" />
-          </div>
-
-          <span class="compare__tag compare__tag--before">Antes</span>
-          <span class="compare__tag compare__tag--after">Después</span>
-
-          <div class="compare__handle" data-compare-handle aria-hidden="true">
-            <span class="compare__grip">
-              <svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M10 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-
-          <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" data-compare-range aria-label="Deslizar para comparar el antes y el después" />
-        </div>
-
-        <p class="transform__caption reveal">Mismo espacio, mismos metros — resuelto a tu estilo y tu presupuesto, con objetos, color y un poco de cariño.</p>
-      </div>
-    </section>
-
-    <!-- ============ SHOWCASE (scroll horizontal) ============ -->
-    <section class="showcase" id="showcase" aria-labelledby="showcase-title">
-      <div class="showcase__head">
-        <p class="showcase__eyebrow reveal">En una frase</p>
-      </div>
-
-      <div class="showcase__pin" data-showcase>
-        <h2 class="showcase__track showcase__giant" data-showcase-track id="showcase-title">
-          Cada casa tiene su propia <em>historia</em>
-        </h2>
-      </div>
-    </section>
-
-    <!-- ============ SOBRE CANDELA ============ -->
-    <section class="about" id="sobre">
-      <figure class="about__image reveal-image">
-        <!-- Placeholder — reemplazar por foto de Candela -->
-        <svg class="about__placeholder" viewBox="0 0 700 860" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retrato de Candela González Mendonça — fotografía próximamente">
-          <rect width="700" height="860" fill="#e4d6c0" />
-          <circle cx="350" cy="330" r="120" fill="none" stroke="#8a7c68" stroke-width="1.6" opacity="0.75" />
-          <path d="M190 700 q160 -140 320 0" fill="none" stroke="#8a7c68" stroke-width="1.6" opacity="0.75" />
-          <text x="50%" y="93%" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="14" letter-spacing="2" fill="#8a7c68">FOTOGRAFÍA PRÓXIMAMENTE</text>
-        </svg>
-      </figure>
-
-      <div class="about__text">
-        <p class="about__eyebrow reveal">Detrás de la marca</p>
-        <h2 class="about__title reveal">Candela<br />González Mendonça</h2>
-        <p class="about__body reveal">
-          Apasionada por transformar casas en espacios que reflejan a
-          quienes las habitan. Su ojo para combinar objetos, colores y
-          texturas convierte ambientes cotidianos en lugares con
-          mucha onda — sin fórmulas rígidas ni gastos innecesarios.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="closing hscroll" id="contacto">
-      <div class="hscroll__track">
-        <p class="closing__eyebrow reveal">A tu estilo y tu presupuesto</p>
-        <h2 class="closing__title reveal">Tu casa, pero mucho más vos.</h2>
-        <a class="closing__cta reveal" href="mailto:hola@gonzalezmendonca.com">Trabajemos juntas</a>
-      </div>
-    </section>
-
+  <main class="soon">
+    <span class="soon__mark">González Mendonça</span>
+    <h1 class="soon__title">Próximamente</h1>
+    <span class="soon__rule" aria-hidden="true"></span>
+    <p class="soon__text">Estamos preparando un nuevo espacio. Muy pronto vas a poder conocer el proyecto.</p>
   </main>
 
-  <footer class="footer">
-    <span class="footer__brand">González Mendonça</span>
-    <span class="footer__sub">Candela González Mendonça · Interiorismo &amp; Decoración</span>
-    <a class="footer__social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-    <span class="footer__copy">&copy; <span id="year"></span> González Mendonça</span>
-  </footer>
+  <a class="preview-link" href="sitio.html">Ver avance</a>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/hscroll.js"></script>
-  <script src="js/showcase.js"></script>
-  <script src="js/scrollbar.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>
